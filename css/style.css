@@ -1,0 +1,771 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f9fbff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#devis .choice,
+#property .choice,
+#objective .choice {
+  width: 30%;
+}
+
+#status .choice,
+#rooms .choice,
+#services .choice {
+  width: 24%;
+}
+
+#status .choice-3 h3,
+#rooms .choice-3 h3,
+#services .choice-3 h3 {
+  text-align: center;
+}
+
+#status .choice-1 h3,
+#status .choice-1 i, #status .choice-3 h3,
+#status .choice-3 i,
+#rooms .choice-1 h3,
+#rooms .choice-1 i,
+#rooms .choice-3 h3,
+#rooms .choice-3 i,
+#services .choice-1 h3,
+#services .choice-1 i,
+#services .choice-3 h3,
+#services .choice-3 i {
+  color: #f39c12;
+}
+
+#status .choice-1 h6, #status .choice-3 h6,
+#rooms .choice-1 h6,
+#rooms .choice-3 h6,
+#services .choice-1 h6,
+#services .choice-3 h6 {
+  margin-bottom: 15px;
+}
+
+#status .choice-2 h3,
+#status .choice-2 i, #status .choice-4 h3,
+#status .choice-4 i,
+#rooms .choice-2 h3,
+#rooms .choice-2 i,
+#rooms .choice-4 h3,
+#rooms .choice-4 i,
+#services .choice-2 h3,
+#services .choice-2 i,
+#services .choice-4 h3,
+#services .choice-4 i {
+  color: #2980b9;
+}
+
+#status .choice-2 h6, #status .choice-4 h6,
+#rooms .choice-2 h6,
+#rooms .choice-4 h6,
+#services .choice-2 h6,
+#services .choice-4 h6 {
+  margin-bottom: 15px;
+}
+
+#rooms h6 {
+  font-size: 25px;
+}
+
+#rooms .resultat {
+  margin-bottom: 15px;
+  font-size: 30px;
+}
+
+#rooms .buttons button {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  background-color: #2980b9;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 40px;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+#rooms .buttons button:hover {
+  background-color: #409ad5;
+  cursor: pointer;
+}
+
+#rooms .buttons button:first-child {
+  margin-right: 5px;
+}
+
+#property .choice-1, #property .choice-3,
+#objective .choice-1,
+#objective .choice-3,
+#rooms .choice-1,
+#rooms .choice-3 {
+  color: #f39c12;
+}
+
+#property .choice-2,
+#objective .choice-2,
+#rooms .choice-2 {
+  color: #2980b9;
+}
+
+#property .condo,
+#property .real-estate,
+#property .house,
+#property .house-refresh,
+#property .bed,
+#property .stove,
+#property .sofa,
+#property .bathtub,
+#objective .condo,
+#objective .real-estate,
+#objective .house,
+#objective .house-refresh,
+#objective .bed,
+#objective .stove,
+#objective .sofa,
+#objective .bathtub,
+#rooms .condo,
+#rooms .real-estate,
+#rooms .house,
+#rooms .house-refresh,
+#rooms .bed,
+#rooms .stove,
+#rooms .sofa,
+#rooms .bathtub {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+#rooms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+}
+
+#rooms h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#rooms .choices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#rooms .choices .choice {
+  height: 300px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #f4f4f4;
+  -webkit-box-shadow: 0 0 0 #000;
+          box-shadow: 0 0 0 #000;
+}
+
+#rooms .choices .choice:hover {
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 1px 1px 10px #ccc;
+          box-shadow: 1px 1px 10px #ccc;
+  cursor: pointer;
+}
+
+#rooms .choices .choice i {
+  margin-bottom: 20px;
+}
+
+#rooms .choices .choice i.fa-hammer {
+  color: #1abc9c;
+}
+
+#rooms .choices .choice i.fa-paint-roller {
+  color: #3498db;
+}
+
+#rooms .choices .choice i.fa-tools {
+  color: #e74c3c;
+}
+
+#rooms .choices .choice h3 {
+  font-size: 30px;
+  text-align: center;
+}
+
+#devis,
+#status,
+#property,
+#services,
+#surface,
+#objective {
+  width: 80%;
+}
+
+#devis h1,
+#status h1,
+#property h1,
+#services h1,
+#surface h1,
+#objective h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#devis .choices,
+#status .choices,
+#property .choices,
+#services .choices,
+#surface .choices,
+#objective .choices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#devis .choices .choice,
+#status .choices .choice,
+#property .choices .choice,
+#services .choices .choice,
+#surface .choices .choice,
+#objective .choices .choice {
+  height: 250px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #f4f4f4;
+  -webkit-box-shadow: 0 0 0 #000;
+          box-shadow: 0 0 0 #000;
+}
+
+#devis .choices .choice:hover,
+#status .choices .choice:hover,
+#property .choices .choice:hover,
+#services .choices .choice:hover,
+#surface .choices .choice:hover,
+#objective .choices .choice:hover {
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 1px 1px 10px #ccc;
+          box-shadow: 1px 1px 10px #ccc;
+  cursor: pointer;
+}
+
+#devis .choices .choice i,
+#status .choices .choice i,
+#property .choices .choice i,
+#services .choices .choice i,
+#surface .choices .choice i,
+#objective .choices .choice i {
+  margin-bottom: 20px;
+}
+
+#devis .choices .choice i.fa-hammer,
+#status .choices .choice i.fa-hammer,
+#property .choices .choice i.fa-hammer,
+#services .choices .choice i.fa-hammer,
+#surface .choices .choice i.fa-hammer,
+#objective .choices .choice i.fa-hammer {
+  color: #1abc9c;
+}
+
+#devis .choices .choice i.fa-paint-roller,
+#status .choices .choice i.fa-paint-roller,
+#property .choices .choice i.fa-paint-roller,
+#services .choices .choice i.fa-paint-roller,
+#surface .choices .choice i.fa-paint-roller,
+#objective .choices .choice i.fa-paint-roller {
+  color: #3498db;
+}
+
+#devis .choices .choice i.fa-tools,
+#status .choices .choice i.fa-tools,
+#property .choices .choice i.fa-tools,
+#services .choices .choice i.fa-tools,
+#surface .choices .choice i.fa-tools,
+#objective .choices .choice i.fa-tools {
+  color: #e74c3c;
+}
+
+#devis .choices .choice h3,
+#status .choices .choice h3,
+#property .choices .choice h3,
+#services .choices .choice h3,
+#surface .choices .choice h3,
+#objective .choices .choice h3 {
+  font-size: 30px;
+  text-align: center;
+}
+
+#services form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#services input[type="checkbox"] {
+  margin: 20px 0;
+  width: 20px;
+  height: 20px;
+}
+
+.btn {
+  padding: 20px 30px;
+  color: #fff;
+  font-size: 30px;
+  border: none;
+  margin: 80px 0 0 0;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: #2980b9;
+  -webkit-transition: background-color ease 0.3s;
+  transition: background-color ease 0.3s;
+}
+
+.btn:hover {
+  background-color: #20638f;
+  cursor: pointer;
+}
+
+#surface {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+}
+
+#surface form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#surface form label {
+  color: #333;
+  font-size: 30px;
+}
+
+#surface form input[type="text"] {
+  margin: 30px 0;
+  padding: 20px 40px;
+}
+
+#surface h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#surface .btn {
+  margin-top: 50px;
+}
+
+#budget {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+}
+
+#budget form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#budget form label {
+  color: #333;
+  font-size: 30px;
+}
+
+#budget form input[type="text"] {
+  margin: 30px 0;
+  padding: 20px 40px;
+}
+
+#budget h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#budget p {
+  text-align: center;
+  width: 60%;
+  line-height: 1.5;
+  margin: 30px 0;
+}
+
+#budget .btn {
+  margin-top: 50px;
+}
+
+#budget .fourchette-basse label, #budget .fourchette-haute label {
+  margin-right: 20px;
+}
+
+#expected_start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+}
+
+#expected_start h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#expected_start .choices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#expected_start .choices .choice {
+  height: 250px;
+  width: 24%;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #f4f4f4;
+  -webkit-box-shadow: 0 0 0 #000;
+          box-shadow: 0 0 0 #000;
+}
+
+#expected_start .choices .choice:hover {
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 1px 1px 10px #ccc;
+          box-shadow: 1px 1px 10px #ccc;
+  cursor: pointer;
+}
+
+#expected_start .choices .choice h3 {
+  font-size: 20px;
+  text-align: center;
+}
+
+#consulting_needed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+}
+
+#consulting_needed .architect {
+  width: 15%;
+  margin: 30px 0;
+}
+
+#consulting_needed h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#estimation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+}
+
+#estimation h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#estimation p {
+  color: #333;
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+#estimation .estimation-content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#estimation .estimation-content-form, #estimation .estimation-content-list {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+
+#estimation .estimation-content-list {
+  background-color: #fff;
+  padding: 20px;
+}
+
+#estimation .estimation-content-list h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #444;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+#estimation .estimation-content-list h3:after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  height: 3px;
+  width: 75%;
+  background-color: #444;
+}
+
+#estimation .estimation-content-list ul {
+  margin-bottom: 30px;
+}
+
+#estimation .estimation-content-list ul li {
+  list-style-type: none;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+#estimation .estimation-content-list ul li::first-letter {
+  font-weight: bold;
+}
+
+#estimation .estimation-content-list ul li i {
+  color: #2ecc71;
+  margin-right: 10px;
+}
+
+#estimation .estimation-content-list .total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#estimation .estimation-content-list .total h5 {
+  font-size: 25px;
+  color: #2980b9;
+}
+
+#estimation .estimation-content-list .total-blur {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+  font-size: 20px;
+}
+
+#estimation .estimation-content-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#estimation .estimation-content-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#estimation .estimation-content-form .input-group {
+  margin-bottom: 30px;
+}
+
+#estimation .estimation-content-form .input-group input {
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  border: none;
+  line-height: 22px;
+  padding: 8px 12px 7px;
+  width: 400px;
+  height: 40px;
+}
+
+#estimation .estimation-content-form .input-group input,
+#estimation .estimation-content-form .input-group label {
+  display: block;
+}
+
+#estimation .estimation-content-form .input-group label {
+  color: #666;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+#estimation .estimation-content-form .btn-toggle-tarea i {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #2980b9;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  margin-right: 1px;
+}
+
+#estimation .estimation-content-form .btn {
+  margin-top: 30px;
+  padding: 10px;
+  font-size: 20px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: #2980b9;
+  -webkit-transition: background-color ease 0.3s;
+  transition: background-color ease 0.3s;
+}
+
+#estimation .estimation-content-form .btn:hover {
+  background-color: #20638f;
+  cursor: pointer;
+}

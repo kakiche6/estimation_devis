@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Formulaire Devis</title>
+  </head>
+
+  <body>
+    <section id="status">
+      <h1>Vous êtes ?</h1>
+      <div class="choices">
+        <div class="choice-1 choice">
+          <i class="fas fa-user-tie fa-5x"></i>
+          <h3>Propriétaire</h3>
+        </div>
+        <div class="choice-2 choice">
+          <i class="fas fa-search fa-5x"></i>
+          <h3>En recherche d'un bien</h3>
+        </div>
+        <div class="choice-3 choice">
+          <i class="fas fa-signature fa-5x"></i>
+          <h3>Signataire d'un compromis</h3>
+        </div>
+        <div class="choice-4 choice">
+          <i class="fas fa-info-circle fa-5x"></i>
+          <h3>Juste curieux</h3>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://kit.fontawesome.com/1febc0ee72.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <script>
+      const choices = document.querySelectorAll(".choice");
+      console.log(choices);
+
+      choices.forEach(function(choice) {
+        choice.addEventListener("click", function() {
+          const className = choice.classList[0];
+          const element = document.querySelector(`.${className}`);
+          const Heading3 = element.children[1];
+          textHeading3 = Heading3.textContent;
+          localStorage.setItem("status", textHeading3);
+          window.location.assign("property.html");
+        });
+      });
+    </script>
+  </body>
+</html>
