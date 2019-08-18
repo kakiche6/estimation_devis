@@ -1,27 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Formulaire Devis</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <section id="surface">
-        <h1>Quelle est la superficie totale ?</h1>
-        <form action="">
-            <label for="surface"> Superficie en m<sup>2</sup> </label>
-            <input type="text" placeholder="Insérez la surface ici">
-            <input type="submit" value="Etape suivante" class="btn" name="submit">
-        </form>
+      <h1>Quelle est la superficie totale ?</h1>
+      <form>
+        <label for="surface"> Superficie en m<sup>2</sup> </label>
+        <input
+          type="text"
+          id="superficie"
+          placeholder="Insérez la surface ici"
+        />
+        <input
+          type="submit"
+          id="submit"
+          value="Etape suivante"
+          class="btn"
+          name="submit"
+        />
+      </form>
     </section>
 
     <script src="https://kit.fontawesome.com/1febc0ee72.js"></script>
-    <script src="main.js"></script>
-</body>
+    <script>
+      //   console.log(
+      //     localStorage.getItem("electriciteVal"),
+      //     localStorage.getItem("plomberieVal"),
+      //     localStorage.getItem("solsVal"),
+      //     localStorage.getItem("mursVal")
+      //   );
 
+      document.querySelector("#submit").addEventListener("click", function(e) {
+        e.preventDefault();
+        const superficie = document.getElementById("superficie").value;
+        localStorage.setItem(
+          "superficie",
+          `La superficie totale: ${superficie}`
+        );
+
+        window.location.assign("budget.html");
+      });
+    </script>
+  </body>
 </html>

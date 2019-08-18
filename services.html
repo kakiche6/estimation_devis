@@ -1,47 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Formulaire Devis</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <section id="services">
-        <h1>Prévoyez-vous des travaux dans les domaines suivants :</h1>
-        <form>
-            <div class="choices">
-                <div class="choice-1 choice">
-                    <!-- <i class="fas fa-user-tie fa-5x"></i> -->
-                    <h3>Electricité</h3>
-                    <input type="checkbox" name="choice[]" id="choice">
-                </div>
-                <div class="choice-2 choice">
-                    <!-- <i class="fas fa-search fa-5x"></i> -->
-                    <h3>Plomberie</h3>
-                    <input type="checkbox" name="choice[]" id="choice">
-                </div>
-                <div class="choice-3 choice">
-                    <!-- <i class="fas fa-signature fa-5x"></i> -->
-                    <h3>Sols</h3>
-                    <input type="checkbox" name="choice[]" id="choice">
-                </div>
-                <div class="choice-4 choice">
-                    <!-- <i class="fas fa-info-circle fa-5x"></i> -->
-                    <h3>Murs</h3>
-                    <input type="checkbox" name="choice[]" id="choice">
-                </div>
-            </div>
-            <button type="submit" class="btn" name="submit">Etape suivante</button>
-        </form>
+      <h1>Prévoyez-vous des travaux dans les domaines suivants :</h1>
+      <form method="POST">
+        <div class="choices">
+          <div class="choice-1 choice">
+            <!-- <i class="fas fa-user-tie fa-5x"></i> -->
+            <h3>Electricité</h3>
+            <input
+              type="checkbox"
+              name="choice[]"
+              value="Electricité"
+              id="electricite"
+            />
+          </div>
+          <div class="choice-2 choice">
+            <!-- <i class="fas fa-search fa-5x"></i> -->
+            <h3>Plomberie</h3>
+            <input
+              type="checkbox"
+              name="choice[]"
+              value="Plomberie"
+              id="plomberie"
+            />
+          </div>
+          <div class="choice-3 choice">
+            <!-- <i class="fas fa-signature fa-5x"></i> -->
+            <h3>Sols</h3>
+            <input type="checkbox" name="choice[]" value="Sols" id="sols" />
+          </div>
+          <div class="choice-4 choice">
+            <!-- <i class="fas fa-info-circle fa-5x"></i> -->
+            <h3>Murs</h3>
+            <input type="checkbox" name="choice[]" value="Murs" id="murs" />
+          </div>
+        </div>
+        <button type="submit" class="btn" id="submit" name="submit">
+          Etape suivante
+        </button>
+      </form>
     </section>
 
     <script src="https://kit.fontawesome.com/1febc0ee72.js"></script>
-    <script src="main.js"></script>
-</body>
+    <script>
+      //   const resultat_chambre = localStorage.getItem("resultat_chambre");
+      //   const resultat_salon = localStorage.getItem("resultat_salon");
+      //   const resultat_cuisine = localStorage.getItem("resultat_cuisine");
+      //   const resultat_sdb = localStorage.getItem("resultat_sdb");
 
+      //   console.log(
+      //     resultat_chambre,
+      //     resultat_salon,
+      //     resultat_cuisine,
+      //     resultat_sdb
+      //   );
+
+      const checkbox1 = document.querySelector("#electricite");
+      const checkbox2 = document.querySelector("#plomberie");
+      const checkbox3 = document.querySelector("#sols");
+      const checkbox4 = document.querySelector("#murs");
+
+      document.querySelector("#submit").addEventListener("click", function(e) {
+        e.preventDefault();
+        if (checkbox1.checked) {
+          //   const travauxElectricite = true;
+          const electriciteVal = checkbox1.value;
+          localStorage.setItem(
+            "electriciteVal",
+            `Vous prévoyez des travaux dans les domaines suivants: ${electriciteVal}`
+          );
+        }
+
+        if (checkbox2.checked) {
+          //   const travauxPlomberie = true;
+          const plomberieVal = checkbox2.value;
+          localStorage.setItem(
+            "plomberieVal",
+            `Vous prévoyez des travaux dans les domaines suivants: ${plomberieVal}`
+          );
+        }
+
+        if (checkbox3.checked) {
+          //   const travauxSols = true;
+          const solsVal = checkbox3.value;
+          localStorage.setItem(
+            "solsVal",
+            `Vous prévoyez des travaux dans les domaines suivants: ${solsVal}`
+          );
+        }
+
+        if (checkbox4.checked) {
+          //   const travauxMurs = true;
+          const mursVal = checkbox4.value;
+          localStorage.setItem(
+            "mursVal",
+            `Vous prévoyez des travaux dans les domaines suivants: ${mursVal}`
+          );
+        }
+
+        window.location.assign("surface.html");
+      });
+    </script>
+  </body>
 </html>

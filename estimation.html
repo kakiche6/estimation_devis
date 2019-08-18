@@ -25,8 +25,8 @@
           <h3>
             estimation
           </h3>
-          <ul>
-            <li><i class="fas fa-check"></i> Rénover</li>
+          <ul id="liste_estimation">
+            <!-- <li><i class="fas fa-check"></i> Rénover</li>
             <li><i class="fas fa-check"></i> Propriétaire</li>
             <li><i class="fas fa-check"></i> Maison</li>
             <li><i class="fas fa-check"></i> Investissement locatif</li>
@@ -35,7 +35,7 @@
             <li><i class="fas fa-check"></i> 5 m2</li>
             <li><i class="fas fa-check"></i> Budget : de ** à **</li>
             <li><i class="fas fa-check"></i> Plus tard</li>
-            <li><i class="fas fa-check"></i> Autres options</li>
+            <li><i class="fas fa-check"></i> Autres options</li> -->
           </ul>
           <div class="total">
             <h5>Total</h5>
@@ -59,7 +59,7 @@
             <div class="btn-toggle-tarea">
               <i class="fas fa-plus"> </i> Ajouter une description plus précise
             </div>
-            <button type="submit" name="submit" class="btn">
+            <button type="submit" id="recevoir_devis" name="submit" class="btn">
               Recevoir mon devis
             </button>
           </form>
@@ -68,6 +68,73 @@
     </section>
 
     <script src="https://kit.fontawesome.com/1febc0ee72.js"></script>
-    <script src="main.js"></script>
+    <script>
+      const projet = localStorage.getItem("projet");
+      const status = localStorage.getItem("status");
+      const property = localStorage.getItem("property");
+      const objective = localStorage.getItem("objective");
+      const resultat_chambre = localStorage.getItem("resultat_chambre");
+      const resultat_salon = localStorage.getItem("resultat_salon");
+      const resultat_cuisine = localStorage.getItem("resultat_cuisine");
+      const resultat_sdb = localStorage.getItem("resultat_sdb");
+      const electriciteVal = localStorage.getItem("electriciteVal");
+      const plomberieVal = localStorage.getItem("plomberieVal");
+      const solsVal = localStorage.getItem("solsVal");
+      const mursVal = localStorage.getItem("mursVal");
+      const superficie = localStorage.getItem("superficie");
+      const fourchette_basse = localStorage.getItem("fourchette_basse");
+      const fourchette_haute = localStorage.getItem("fourchette_haute");
+      const periode_debuter_travaux = localStorage.getItem(
+        "periode_debuter_travaux"
+      );
+      const besoin_architecte = localStorage.getItem("besoin_architecte");
+
+      const items = [
+        projet,
+        status,
+        property,
+        objective,
+        resultat_chambre,
+        resultat_cuisine,
+        resultat_salon,
+        resultat_sdb,
+        electriciteVal,
+        plomberieVal,
+        solsVal,
+        mursVal,
+        superficie,
+        fourchette_basse,
+        fourchette_haute,
+        periode_debuter_travaux,
+        besoin_architecte
+      ];
+
+      items.forEach(function(item) {
+        if (item !== null) {
+          const li = document.createElement("li");
+          li.innerHTML = `<i class="fas fa-check"></i> ${item}`;
+          document.querySelector("#liste_estimation").appendChild(li);
+        }
+      });
+
+      document
+        .querySelector("#recevoir_devis")
+        .addEventListener("click", function(e) {
+          e.preventDefault();
+          localStorage.clear();
+
+          // Importer JQuery
+          /*  $.ajax({
+            url: "submit_form.php",
+            method: "POST",
+            data: {
+              // Data here
+            },
+            success: function() {
+              // à continuer
+            }
+          }); */
+        });
+    </script>
   </body>
 </html>

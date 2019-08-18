@@ -43,7 +43,7 @@
           const element = document.querySelector(`.${className}`);
           const Heading3 = element.children[1];
           textHeading3 = Heading3.textContent;
-          localStorage.setItem("property", textHeading3);
+          localStorage.setItem("property", `Type de bien: ${textHeading3}`);
           window.location.assign("objective.html");
         });
       });

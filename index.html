@@ -34,6 +34,7 @@
     <script src="https://kit.fontawesome.com/1febc0ee72.js"></script>
     <!-- <script src="main.js"></script> -->
     <script>
+      // localStorage.clear();
       const choices = document.querySelectorAll(".choice");
       console.log(choices);
 
@@ -43,7 +44,7 @@
           const element = document.querySelector(`.${className}`);
           const Heading3 = element.children[1];
           textHeading3 = Heading3.textContent;
-          localStorage.setItem("projet", textHeading3);
+          localStorage.setItem("projet", `Votre projet: ${textHeading3}`);
           window.location.assign("status.html");
         });
       });

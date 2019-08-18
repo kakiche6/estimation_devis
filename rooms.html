@@ -20,43 +20,153 @@
           <!-- <i class="fas fa-user-tie fa-5x"></i> -->
           <img src="img/bed.png" alt="bed" class="bed" />
           <h6>Chambre</h6>
-          <span class="resultat">0</span>
-          <div class="buttons"><button>+</button><button>-</button></div>
+          <span class="resultat_chambre resultat"></span>
+          <div class="buttons">
+            <button class="btn-plus-chambre">+</button
+            ><button class="btn-minus-chambre">-</button>
+          </div>
         </div>
         <div class="choice-2 choice">
           <!-- <i class="fas fa-search fa-5x"></i> -->
           <img src="img/stove.png" alt="stove" class="stove" />
           <h6>Salon</h6>
-          <span class="resultat">0</span>
-          <div class="buttons"><button>+</button><button>-</button></div>
+          <span class="resultat_salon resultat"></span>
+          <div class="buttons">
+            <button class="btn-plus-salon">+</button
+            ><button class="btn-minus-salon">-</button>
+          </div>
         </div>
         <div class="choice-3 choice">
           <!-- <i class="fas fa-signature fa-5x"></i> -->
           <img src="img/sofa.png" alt="sofa" class="sofa" />
           <h6>Cuisine</h6>
-          <span class="resultat">0</span>
-          <div class="buttons"><button>+</button><button>-</button></div>
+          <span class="resultat_cuisine resultat"></span>
+          <div class="buttons">
+            <button class="btn-plus-cuisine">+</button
+            ><button class="btn-minus-cuisine">-</button>
+          </div>
         </div>
         <div class="choice-4 choice">
           <!-- <i class="fas fa-info-circle fa-5x"></i> -->
           <img src="img/bathtub.png" alt="bathtub" class="bathtub" />
           <h6>Salle de bain</h6>
-          <span class="resultat">0</span>
-          <div class="buttons"><button>+</button><button>-</button></div>
+          <span class="resultat_sdb resultat"></span>
+          <div class="buttons">
+            <button class="btn-plus-sdb">+</button
+            ><button class="btn-minus-sdb">-</button>
+          </div>
         </div>
       </div>
-      <button class="btn">Etape suivante</button>
+      <button class="btn" id="etape_suivante">Etape suivante</button>
     </section>
 
     <script src="https://kit.fontawesome.com/1febc0ee72.js"></script>
     <!-- <script src="main.js"></script> -->
     <script>
-      console.log(
-        localStorage.getItem("projet") + "\n",
-        localStorage.getItem("status") + "\n",
-        localStorage.getItem("property") + "\n",
-        localStorage.getItem("objective") + "\n"
-      );
+      let resultat_chambre = 0,
+        resultat_salon = 0,
+        resultat_cuisine = 0,
+        resultat_sdb = 0;
+
+      document.querySelector(".resultat_chambre").innerText = resultat_chambre;
+      document.querySelector(".resultat_salon").innerText = resultat_salon;
+      document.querySelector(".resultat_cuisine").innerText = resultat_cuisine;
+      document.querySelector(".resultat_sdb").innerText = resultat_sdb;
+
+      document
+        .querySelector(".btn-plus-chambre")
+        .addEventListener("click", function() {
+          resultat_chambre++;
+          document.querySelector(
+            ".resultat_chambre"
+          ).innerText = resultat_chambre;
+        });
+
+      document
+        .querySelector(".btn-plus-salon")
+        .addEventListener("click", function() {
+          resultat_salon++;
+          document.querySelector(".resultat_salon").innerText = resultat_salon;
+        });
+
+      document
+        .querySelector(".btn-plus-cuisine")
+        .addEventListener("click", function() {
+          resultat_cuisine++;
+          document.querySelector(
+            ".resultat_cuisine"
+          ).innerText = resultat_cuisine;
+        });
+
+      document
+        .querySelector(".btn-plus-sdb")
+        .addEventListener("click", function() {
+          resultat_sdb++;
+          document.querySelector(".resultat_sdb").innerText = resultat_sdb;
+        });
+
+      document
+        .querySelector(".btn-minus-chambre")
+        .addEventListener("click", function() {
+          if (resultat_chambre !== 0) {
+            resultat_chambre--;
+          }
+          document.querySelector(
+            ".resultat_chambre"
+          ).innerText = resultat_chambre;
+        });
+
+      document
+        .querySelector(".btn-minus-salon")
+        .addEventListener("click", function() {
+          if (resultat_salon !== 0) {
+            resultat_salon--;
+          }
+          document.querySelector(".resultat_salon").innerText = resultat_salon;
+        });
+
+      document
+        .querySelector(".btn-minus-cuisine")
+        .addEventListener("click", function() {
+          if (resultat_cuisine !== 0) {
+            resultat_cuisine--;
+          }
+          document.querySelector(
+            ".resultat_cuisine"
+          ).innerText = resultat_cuisine;
+        });
+
+      document
+        .querySelector(".btn-minus-sdb")
+        .addEventListener("click", function() {
+          if (resultat_sdb !== 0) {
+            resultat_sdb--;
+          }
+          document.querySelector(".resultat_sdb").innerText = resultat_sdb;
+        });
+
+      document
+        .querySelector("#etape_suivante")
+        .addEventListener("click", function() {
+          localStorage.setItem(
+            "resultat_chambre",
+            `Nombre de chambres: ${resultat_chambre}`
+          );
+          localStorage.setItem(
+            "resultat_salon",
+            `Nombre de salons: ${resultat_salon}`
+          );
+          localStorage.setItem(
+            "resultat_cuisine",
+            `Nombre de cuisines: ${resultat_cuisine}`
+          );
+          localStorage.setItem(
+            "resultat_sdb",
+            `Nombre de salles de bain: ${resultat_sdb}`
+          );
+
+          window.location.assign("services.html");
+        });
     </script>
   </body>
 </html>

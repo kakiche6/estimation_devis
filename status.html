@@ -47,7 +47,7 @@
           const element = document.querySelector(`.${className}`);
           const Heading3 = element.children[1];
           textHeading3 = Heading3.textContent;
-          localStorage.setItem("status", textHeading3);
+          localStorage.setItem("status", `Vous êtes: ${textHeading3}`);
           window.location.assign("property.html");
         });
       });
