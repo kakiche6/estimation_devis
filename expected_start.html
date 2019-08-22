@@ -1,252 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Formulaire Devis</title>
-  </head>
 
-  <body>
-    <section id="expected_start">
-      <h1>Quand voulez-vous débuter les travaux ?</h1>
-      <div class="choices">
-        <div class="choice-1 choice">
-          <h3></h3>
-        </div>
-        <div class="choice-2 choice">
-          <h3></h3>
-        </div>
-        <div class="choice-3 choice">
-          <h3></h3>
-        </div>
-        <div class="choice-4 choice">
-          <h3>Plus tard</h3>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Formulaire Devis</title>
+</head>
+
+<body>
+  <section id="expected_start">
+    <h1>Quand voulez-vous débuter les travaux ?</h1>
+    <div class="choices">
+      <div class="choice-1 choice">
+        <h3></h3>
       </div>
-      <button class="btn">Etape suivante</button>
-    </section>
+      <div class="choice-2 choice">
+        <h3></h3>
+      </div>
+      <div class="choice-3 choice">
+        <h3></h3>
+      </div>
+      <div class="choice-4 choice">
+        <h3>Plus tard</h3>
+      </div>
+    </div>
+    <button class="btn">Etape suivante</button>
+  </section>
 
-    <script src="https://kit.fontawesome.com/1febc0ee72.js"></script>
-    <script>
-      console.log(
-        localStorage.getItem("fourchette_basse"),
-        localStorage.getItem("fourchette_haute")
-      );
+  <script src="https://kit.fontawesome.com/1febc0ee72.js"></script>
+  <script>
+    console.log(
+      localStorage.getItem("fourchette_basse"),
+      localStorage.getItem("fourchette_haute")
+    );
 
-      const date = new Date();
-      const month_num = date.getMonth();
-      const month_num_p1 = month_num + 1;
-      const month_num_p2 = month_num + 2;
-      const year = date.getFullYear();
+    const date = new Date();
+    let month_num = date.getMonth(),
+      month_num_p1 = month_num + 1,
+      month_num_p2 = month_num + 2,
+      year = date.getFullYear(),
+      year_p1 = date.getFullYear(),
+      year_p2 = date.getFullYear();
 
-      let month_val;
-      switch (month_num) {
-        case 0:
-          month_val = "Janvier";
-          break;
+    if (month_num === 11) {
+      year_p1 = year + 1;
+      year_p2 = year + 1;
+      month_num_p1 = 0;
+      month_num_p2 = month_num_p1 + 1;
+    }
 
-        case 1:
-          month_val = "Février";
-          break;
+    if (month_num_p1 === 11) {
+      year_p1 = year;
+      year_p2 = year + 1;
+      month_num_p2 = 0;
+    }
 
-        case 2:
-          month_val = "Mars";
-          break;
+    let month_val;
+    switch (month_num) {
+      case 0:
+        month_val = "Janvier";
+        break;
 
-        case 3:
-          month_val = "Avril";
-          break;
+      case 1:
+        month_val = "Février";
+        break;
 
-        case 4:
-          month_val = "Mai";
-          break;
+      case 2:
+        month_val = "Mars";
+        break;
 
-        case 5:
-          month_val = "Juin";
-          break;
+      case 3:
+        month_val = "Avril";
+        break;
 
-        case 6:
-          month_val = "Juillet";
-          break;
+      case 4:
+        month_val = "Mai";
+        break;
 
-        case 7:
-          month_val = "Août";
-          break;
+      case 5:
+        month_val = "Juin";
+        break;
 
-        case 8:
-          month_val = "Septembre";
-          break;
+      case 6:
+        month_val = "Juillet";
+        break;
 
-        case 9:
-          month_val = "Octobre";
-          break;
+      case 7:
+        month_val = "Août";
+        break;
 
-        case 10:
-          month_val = "Novembre";
-          break;
+      case 8:
+        month_val = "Septembre";
+        break;
 
-        case 11:
-          month_val = "Décembre";
-          break;
+      case 9:
+        month_val = "Octobre";
+        break;
 
-        default:
-          break;
-      }
+      case 10:
+        month_val = "Novembre";
+        break;
 
-      let month_val_p1;
-      switch (month_num_p1) {
-        case 0:
-          month_val_p1 = "Janvier";
-          break;
+      case 11:
+        month_val = "Décembre";
+        break;
 
-        case 1:
-          month_val_p1 = "Février";
-          break;
+      default:
+        break;
+    }
 
-        case 2:
-          month_val_p1 = "Mars";
-          break;
+    let month_val_p1;
+    switch (month_num_p1) {
+      case 0:
+        month_val_p1 = "Janvier";
+        break;
 
-        case 3:
-          month_val_p1 = "Avril";
-          break;
+      case 1:
+        month_val_p1 = "Février";
+        break;
 
-        case 4:
-          month_val_p1 = "Mai";
-          break;
+      case 2:
+        month_val_p1 = "Mars";
+        break;
 
-        case 5:
-          month_val_p1 = "Juin";
-          break;
+      case 3:
+        month_val_p1 = "Avril";
+        break;
 
-        case 6:
-          month_val_p1 = "Juillet";
-          break;
+      case 4:
+        month_val_p1 = "Mai";
+        break;
 
-        case 7:
-          month_val_p1 = "Août";
-          break;
+      case 5:
+        month_val_p1 = "Juin";
+        break;
 
-        case 8:
-          month_val_p1 = "Septembre";
-          break;
+      case 6:
+        month_val_p1 = "Juillet";
+        break;
 
-        case 9:
-          month_val_p1 = "Octobre";
-          break;
+      case 7:
+        month_val_p1 = "Août";
+        break;
 
-        case 10:
-          month_val_p1 = "Novembre";
-          break;
+      case 8:
+        month_val_p1 = "Septembre";
+        break;
 
-        case 11:
-          month_val_p1 = "Décembre";
-          break;
+      case 9:
+        month_val_p1 = "Octobre";
+        break;
 
-        default:
-          break;
-      }
+      case 10:
+        month_val_p1 = "Novembre";
+        break;
 
-      let month_val_p2;
-      switch (month_num_p2) {
-        case 0:
-          month_val_p2 = "Janvier";
-          break;
+      case 11:
+        month_val_p1 = "Décembre";
+        break;
 
-        case 1:
-          month_val_p2 = "Février";
-          break;
+      default:
+        break;
+    }
 
-        case 2:
-          month_val_p2 = "Mars";
-          break;
+    let month_val_p2;
+    switch (month_num_p2) {
+      case 0:
+        month_val_p2 = "Janvier";
+        break;
 
-        case 3:
-          month_val_p2 = "Avril";
-          break;
+      case 1:
+        month_val_p2 = "Février";
+        break;
 
-        case 4:
-          month_val_p2 = "Mai";
-          break;
+      case 2:
+        month_val_p2 = "Mars";
+        break;
 
-        case 5:
-          month_val_p2 = "Juin";
-          break;
+      case 3:
+        month_val_p2 = "Avril";
+        break;
 
-        case 6:
-          month_val_p2 = "Juillet";
-          break;
+      case 4:
+        month_val_p2 = "Mai";
+        break;
 
-        case 7:
-          month_val_p2 = "Août";
-          break;
+      case 5:
+        month_val_p2 = "Juin";
+        break;
 
-        case 8:
-          month_val_p2 = "Septembre";
-          break;
+      case 6:
+        month_val_p2 = "Juillet";
+        break;
 
-        case 9:
-          month_val_p2 = "Octobre";
-          break;
+      case 7:
+        month_val_p2 = "Août";
+        break;
 
-        case 10:
-          month_val_p2 = "Novembre";
-          break;
+      case 8:
+        month_val_p2 = "Septembre";
+        break;
 
-        case 11:
-          month_val_p2 = "Décembre";
-          break;
+      case 9:
+        month_val_p2 = "Octobre";
+        break;
 
-        default:
-          break;
-      }
+      case 10:
+        month_val_p2 = "Novembre";
+        break;
 
-      console.log(month_val, year);
-      document.querySelector(
-        ".choice-1"
-      ).children[0].innerText = `${month_val} ${year}`;
+      case 11:
+        month_val_p2 = "Décembre";
+        break;
 
-      document.querySelector(
-        ".choice-2"
-      ).children[0].innerText = `${month_val_p1} ${year}`;
+      default:
+        break;
+    }
 
-      document.querySelector(
-        ".choice-3"
-      ).children[0].innerText = `${month_val_p2} ${year}`;
 
-      const periode1 = document.querySelector(".choice-1").children[0]
-        .innerText;
-      const periode2 = document.querySelector(".choice-2").children[0]
-        .innerText;
-      const periode3 = document.querySelector(".choice-3").children[0]
-        .innerText;
-      const periode4 = document.querySelector(".choice-4").children[0]
-        .innerText;
 
-      console.log(periode1, periode2, periode3, periode4);
 
-      const choices = document.querySelectorAll(".choice");
-      console.log(choices);
 
-      choices.forEach(function(choice) {
-        choice.addEventListener("click", function() {
-          const className = choice.classList[0];
-          const element = document.querySelector(`.${className}`);
-          const Heading3 = element.children[0];
-          textHeading3 = Heading3.innerText;
-          localStorage.setItem(
-            "periode_debuter_travaux",
-            `Date de démarrage des travaux: ${textHeading3}`
-          );
-          window.location.assign("consulting_needed.html");
-        });
+    console.log(month_val, year);
+    document.querySelector(
+      ".choice-1"
+    ).children[0].innerText = `${month_val} ${year}`;
+
+    document.querySelector(
+      ".choice-2"
+    ).children[0].innerText = `${month_val_p1} ${year_p1}`;
+
+    document.querySelector(
+      ".choice-3"
+    ).children[0].innerText = `${month_val_p2} ${year_p2}`;
+
+    const periode1 = document.querySelector(".choice-1").children[0]
+      .innerText;
+    const periode2 = document.querySelector(".choice-2").children[0]
+      .innerText;
+    const periode3 = document.querySelector(".choice-3").children[0]
+      .innerText;
+    const periode4 = document.querySelector(".choice-4").children[0]
+      .innerText;
+
+    console.log(periode1, periode2, periode3, periode4);
+
+    const choices = document.querySelectorAll(".choice");
+    console.log(choices);
+
+    choices.forEach(function (choice) {
+      choice.addEventListener("click", function () {
+        const className = choice.classList[0];
+        const element = document.querySelector(`.${className}`);
+        const Heading3 = element.children[0];
+        textHeading3 = Heading3.innerText;
+        localStorage.setItem(
+          "periode_debuter_travaux",
+          `Date de démarrage des travaux: ${textHeading3}`
+        );
+        window.location.assign("consulting_needed.html");
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>
